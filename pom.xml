@@ -43,8 +43,6 @@
           <filtering>false</filtering>
         </resource>
       </resources>
-
-
   </build>
 
   <dependencies>
@@ -248,5 +246,6 @@
           <version>RELEASE</version>
       </dependency>
   </dependencies>
+  <!-- 提交测试-->
 
 </project>
