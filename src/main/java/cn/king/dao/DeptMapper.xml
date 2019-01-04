@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.king.dao.DeptMapper">
+
+
+    <resultMap id="dept1" type="Department">
+        <id property="id" column="id"/>
+        <result property="departmentAdmin" column="department_admin"/>
+        <result property="departmentName" column="department_name"/>
+    </resultMap>
+
+
+    <insert id="addDept">
+        <selectKey resultType="Integer" keyProperty="id" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO t_department(
+            department_name,
+            department_admin,
+            telephone,
+            remark )
+        VALUES
+            (
+              #{departmentName},
+              #{departmentAdmin},
+              #{telephone},
+              #{remark}
+            )
+    </insert>
+
+    <update id="editDeptById" parameterType="Department">
+        UPDATE t_department
+        <set>
+            <if test="department.departmentName != null">
+                department_name = #{department.departmentName}
+            </if>
+            <if test="department.departmentAdmin != null">
+                ,department_admin = #{department.departmentAdmin}
+            </if>
+            <if test="department.telephone != null">
+                ,telephone = #{department.telephone}
+            </if>
+            <if test="department.remark != null">
+                ,remark = #{department.remark}
+            </if>
+        </set>
+        where
+          id = #{department.id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="delDeptByIds">
+        delete from t_department WHERE id in
+        <foreach collection="ids" item="id"  open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectDeptByPaging" resultMap="dept1">
+        SELECT
+        t_department.id,
+        t_department.department_name,
+        t_department.department_admin,
+        t_department.telephone,
+        t_department.remark
+        FROM
+        t_department
+        <where>
+            <if test="department.id != null">
+                t_department.id = #{department.id}
+            </if>
+            <if test="department.departmentName != null">
+                AND t_department.department_name like "%"#{department.departmentName}"%"
+            </if>
+            <if test="department.departmentAdmin != null">
+                AND t_department.department_admin like "%"#{department.departmentAdmin}"%"
+            </if>
+            <if test="department.telephone != null">
+                AND t_department.telephone like "%"#{department.telephone}"%"
+            </if>
+        </where>
+        LIMIT
+        #{page},#{limit}
+    </select>
+
+    <select id="selectDeptCountByCondition" resultType="java.lang.Integer">
+      SELECT count(*) FROM t_department
+      <where>
+          <if test="department.departmentName != null">
+               t_department.department_name like "%"#{department.departmentName}"%"
+          </if>
+          <if test="department.departmentAdmin != null">
+              AND t_department.department_admin like "%"#{param1.departmentAdmin}"%"
+          </if>
+      </where>
+    </select>
+
+    <select id="selectAllDept" resultMap="dept1">
+        SELECT
+            t_department.id,
+            t_department.department_name,
+            t_department.department_admin,
+            t_department.telephone,
+            t_department.remark
+        FROM
+            t_department
+    </select>
+
+</mapper>
+
+

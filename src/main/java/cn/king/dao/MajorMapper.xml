@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.king.dao.MajorMapper">
+    
+    
+    <resultMap id="major01" type="Major">
+        <id property="id" column="mid"/>
+        <result property="majorName" column="major_name"/>
+        <result property="remark" column="remark"/>
+        <result property="departmentId" column="did"/>
+        <result property="departmentName" column="department_name"/>
+    </resultMap>
+
+    <insert id="addMajor">
+
+    </insert>
+
+    <select id="selectMajorByPaging" resultMap="major01">
+        SELECT
+        t_major.id AS mid,
+        t_major.major_name,
+        t_major.remark,
+        t_department.id AS did,
+        t_department.department_name
+        FROM
+        t_major
+        INNER JOIN t_department ON t_major.dept_id = t_department.id
+        <where>
+            <if test="major.majorName != null">
+                t_major.major_name like "%"#{majorName}"%"
+            </if>
+            <if test="major.departmentId != null">
+                and t_department.id = #{departmentId}
+            </if>
+        </where>
+        limit #{page},#{limit}
+    </select>
+
+    <select id="selectMajorCountByCondition" resultType="java.lang.Integer">
+        SELECT
+        count(*)
+        FROM
+        t_major
+        <where>
+            <if test="major.majorName != null">
+                t_major.major_name LIKE "%"#{majorName}"%"
+            </if>
+            <if test="major.departmentId != null">
+                and t_major.dept_id = #{departmentId}
+            </if>
+        </where>
+    </select>
+</mapper>

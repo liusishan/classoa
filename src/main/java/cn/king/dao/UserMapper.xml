@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.king.dao.UserMapper">
+
+    <resultMap id="role01" type="Role">
+        <id property="id" column="id"/>
+        <result property="roleName" column="role_name"/>
+    </resultMap>
+
+    <resultMap id="user01" type="User">
+        <id property="id" column="id"/>
+        <result property="account" column="account"/>
+        <result property="password" column="password"/>
+    </resultMap>
+    
+    <resultMap id="student01" type="User">
+        <id property="id" column="id"/>
+        <result property="fName" column="f_name"/>
+        <result property="mName" column="m_name"/>
+        <result property="homeTelephone" column="home_telephone"/>
+        <result property="householdType" column="household_type"/>
+        <result property="majorId" column="major_id"/>
+        <result property="classId" column="class_id"/>
+    </resultMap>
+    
+    <resultMap id="teacher01" type="User">
+        <id property="id" column="id"/>
+        <result property="mainMajor" column="major"/>
+        <result property="highestEducation" column="highest_education"/>
+    </resultMap>
+    
+    <resultMap id="permission01" type="Permission">
+        <id property="id" column="id"/>
+        <result property="permissionName" column="permission_name"/>
+    </resultMap>
+
+
+    <select id="selectUserByLogin" resultMap="user01">
+        select id,account,password from t_user where account = #{account}
+    </select>
+
+    <select id="selectRoleById" resultMap="role01">
+        SELECT
+            id,role_name
+        FROM
+            t_role
+        WHERE
+            t_role.id = ( SELECT role_id FROM t_user_role WHERE t_user_role.user_id = #{id} )
+    </select>
+
+    <select id="selectTeacherById" resultMap="teacher01">
+        SELECT
+            t_user.id,
+            t_user.account,
+            t_user.`password`,
+            t_user.salt,
+            t_user.`name`,
+            t_user.gender,
+            t_user.telephone,
+            t_user.email,
+            t_user.qq,
+            t_user.hiredate,
+            t_user.birthday,
+            t_user.idcard,
+            t_user.remark,
+            t_usert.almamater,
+            t_usert.major,
+            t_usert.highest_education
+        FROM
+            t_user
+            INNER JOIN t_usert ON t_user.id = t_usert.user_id
+        WHERE
+            t_user.id = 2
+    </select>
+
+    <select id="selectAdminById" resultType="cn.king.pojo.User">
+        select
+            t_user.id,
+            t_user.account,
+            t_user.`password`,
+            t_user.salt,
+            t_user.`name`
+         from
+            t_user
+         where id = #{id}
+    </select>
+
+    <select id="selectStudentById" resultMap="student01">
+       SELECT
+            t_user.id,
+            t_user.account,
+            t_user.`password`,
+            t_user.salt,
+            t_user.`name`,
+            t_user.gender,
+            t_user.telephone,
+            t_user.email,
+            t_user.qq,
+            t_user.hiredate,
+            t_user.birthday,
+            t_user.idcard,
+            t_user.remark,
+            t_users.f_name,
+            t_users.m_name,
+            t_users.household_type,
+            t_users.home_telephone,
+            t_users.major_id,
+            t_users.class_id
+        FROM
+            t_user
+            INNER JOIN t_users ON t_user.id = t_users.user_id
+        WHERE
+            t_user.id = 1
+    </select>
+
+    <select id="selectPermissionByUserId" resultMap="permission01">
+        SELECT
+            *
+        FROM
+            t_permission
+        WHERE
+            t_permission.id IN (
+        SELECT
+            t_role_permission.permission_id
+        FROM
+            t_role_permission
+        WHERE
+            t_role_permission.role_id =
+            ( SELECT id FROM t_role WHERE t_role.id
+            = ( SELECT role_id FROM t_user_role WHERE t_user_role.user_id = #{id} ) )
+            )
+    </select>
+
+</mapper>
