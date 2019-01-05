@@ -1,7 +1,6 @@
 package cn.king.controller;
 
-import cn.king.common.ReturnUtil;
-import cn.king.pojo.AJAXResult;
+import cn.king.common.ResultUtil;
 import cn.king.pojo.Department;
 import cn.king.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,7 @@ public class DeptController {
     @ResponseBody
     @RequestMapping("/selectAllDept")
     public Object selectAllDept() {
-        return ReturnUtil.Result(deptService.selectAllDept());
+        return ResultUtil.Result(deptService.selectAllDept());
     }
 
     /**
@@ -49,7 +48,7 @@ public class DeptController {
     @ResponseBody
     @RequestMapping("/editDept")
     public Object editDept(Department department) {
-       return ReturnUtil.Result(deptService.editDeptById(department));
+       return ResultUtil.Result(deptService.editDeptById(department));
     }
 
     /**
@@ -62,7 +61,7 @@ public class DeptController {
     @ResponseBody
     @RequestMapping("/delDepts")
     public Object delDept(String[] ids) {
-       return ReturnUtil.Result(deptService.delDeptByIds(ids));
+       return ResultUtil.Result(deptService.delDeptByIds(ids));
     }
 
     /**
@@ -75,7 +74,7 @@ public class DeptController {
     @ResponseBody
     @RequestMapping("/addDept")
     public Object addDept(Department department) {
-       return ReturnUtil.Result(deptService.addDept(department));
+       return ResultUtil.Result(deptService.addDept(department));
     }
 
     /**

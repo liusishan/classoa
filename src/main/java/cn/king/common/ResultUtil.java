@@ -8,7 +8,7 @@ import cn.king.pojo.AJAXResult;
  * @Author: king
  * @Description: 返回结果工具类
  */
-public class ReturnUtil {
+public class ResultUtil {
 
     /**
      * @param: [result]

@@ -40,37 +40,35 @@
     </bean>
 
 
-<!--
 
-    &lt;!&ndash;配置拦截器&ndash;&gt;
+    <!--配置拦截器-->
     <mvc:interceptors>
-        &lt;!&ndash;登录拦截器&ndash;&gt;
+        <!--登录拦截器-->
         <mvc:interceptor>
-            &lt;!&ndash;所有的请求都会被拦截&ndash;&gt;
+            <!--所有的请求都会被拦截-->
             <mvc:mapping path="/**"/>
-            &lt;!&ndash;某些请求不会被拦截&ndash;&gt;
+            <!--某些请求不会被拦截-->
             <mvc:exclude-mapping path="/login"/>
             <mvc:exclude-mapping path="/doAJAXLogin"/>
-            &lt;!&ndash;静态资源不会被拦截&ndash;&gt;
+            <!--静态资源不会被拦截-->
             <mvc:exclude-mapping path="/layui/**"/>
             <mvc:exclude-mapping path="/style/**"/>
             <bean class="cn.king.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
-        &lt;!&ndash;权限拦截器&ndash;&gt;
+        <!--权限拦截器-->
         <mvc:interceptor>
-            &lt;!&ndash;所有的请求都会被拦截&ndash;&gt;
+            <!--所有的请求都会被拦截-->
             <mvc:mapping path="/**"/>
-            &lt;!&ndash;某些请求不会被拦截&ndash;&gt;
+            <!--某些请求不会被拦截-->
             <mvc:exclude-mapping path="/login"/>
             <mvc:exclude-mapping path="/doAJAXLogin"/>
-            &lt;!&ndash;静态资源不会被拦截&ndash;&gt;
+            <!--静态资源不会被拦截-->
             <mvc:exclude-mapping path="/layui/**"/>
             <mvc:exclude-mapping path="/style/**"/>
             <bean class="cn.king.interceptor.AuthInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 
--->
 
 </beans>
 	

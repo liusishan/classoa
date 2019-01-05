@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>教师</title>
+    <title>课堂管理</title>
     <%@ include file="cite/style.jsp" %>
 </head>
 

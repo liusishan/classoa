@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
-<div class="layui-logo">后台</div>
+<div class="layui-logo">课堂管理</div>
 <ul class="layui-nav layui-layout-left">
     <li class="layui-nav-item"><a href="">控制台</a></li>
     <li class="layui-nav-item"><a href="">商品管理</a></li>

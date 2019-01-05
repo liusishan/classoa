@@ -72,7 +72,7 @@
             t_user
             INNER JOIN t_usert ON t_user.id = t_usert.user_id
         WHERE
-            t_user.id = 2
+            t_user.id = #{id}
     </select>
 
     <select id="selectAdminById" resultType="cn.king.pojo.User">
@@ -112,7 +112,7 @@
             t_user
             INNER JOIN t_users ON t_user.id = t_users.user_id
         WHERE
-            t_user.id = 1
+            t_user.id = #{id}
     </select>
 
     <select id="selectPermissionByUserId" resultMap="permission01">

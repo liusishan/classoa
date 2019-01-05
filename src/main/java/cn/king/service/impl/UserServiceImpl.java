@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
         } else if (role.getRoleName().equals("管理员")) {
             dbUser1 = userMapper.selectAdminById(dbUser1.getId());
             //学生
-        } else {
+        } else if (role.getRoleName().equals("普通学生")){
             dbUser1 = userMapper.selectStudentById(dbUser1.getId());
         }
         return dbUser1;
