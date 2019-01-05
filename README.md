@@ -1,6 +1,6 @@
 2019年1月5日22点10分
 1. 将ReturnUtil.java改名为ResultUtil.java
-2. 解决了添加一条user默认有管理员的bug
+2. 解决了添加一条user默认有管理员权限的bug
 3. 更新了数据表的数据. 不会影响当前功能
 4. springmvc.xml中拦截器配置的注释打开了, 如果需要, 注意再注释掉
 
