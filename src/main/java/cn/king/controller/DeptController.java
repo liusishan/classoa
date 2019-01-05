@@ -1,5 +1,6 @@
 package cn.king.controller;
 
+import cn.king.common.ReturnUtil;
 import cn.king.pojo.AJAXResult;
 import cn.king.pojo.Department;
 import cn.king.service.DeptService;
@@ -35,15 +36,7 @@ public class DeptController {
     @ResponseBody
     @RequestMapping("/selectAllDept")
     public Object selectAllDept() {
-        AJAXResult ajaxResult = new AJAXResult();
-        List<Department> departments = deptService.selectAllDept();
-        if (departments != null) {
-            ajaxResult.setSuccess(true);
-            ajaxResult.setData(departments);
-        } else {
-            ajaxResult.setSuccess(false);
-        }
-        return ajaxResult;
+        return ReturnUtil.Result(deptService.selectAllDept());
     }
 
     /**
@@ -56,15 +49,7 @@ public class DeptController {
     @ResponseBody
     @RequestMapping("/editDept")
     public Object editDept(Department department) {
-        AJAXResult ajaxResult = new AJAXResult();
-        Integer i = deptService.editDeptById(department);
-        if (i != null && i > 0) {
-            ajaxResult.setSuccess(true);
-            ajaxResult.setData(i);
-        } else {
-            ajaxResult.setSuccess(false);
-        }
-        return ajaxResult;
+       return ReturnUtil.Result(deptService.editDeptById(department));
     }
 
     /**
@@ -77,15 +62,7 @@ public class DeptController {
     @ResponseBody
     @RequestMapping("/delDepts")
     public Object delDept(String[] ids) {
-        AJAXResult ajaxResult = new AJAXResult();
-        Integer i = deptService.delDeptByIds(ids);
-        if (i != null && i > 0) {
-            ajaxResult.setData(i);
-            ajaxResult.setSuccess(true);
-        } else {
-            ajaxResult.setSuccess(false);
-        }
-        return ajaxResult;
+       return ReturnUtil.Result(deptService.delDeptByIds(ids));
     }
 
     /**
@@ -98,15 +75,7 @@ public class DeptController {
     @ResponseBody
     @RequestMapping("/addDept")
     public Object addDept(Department department) {
-        AJAXResult ajaxResult = new AJAXResult();
-        Integer i = deptService.addDept(department);
-        if (i == null) {
-            ajaxResult.setSuccess(false);
-        } else {
-            ajaxResult.setData(i);
-            ajaxResult.setSuccess(true);
-        }
-        return ajaxResult;
+       return ReturnUtil.Result(deptService.addDept(department));
     }
 
     /**

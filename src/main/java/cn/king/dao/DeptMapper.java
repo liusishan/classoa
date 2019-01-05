@@ -27,7 +27,7 @@ public interface DeptMapper {
     Integer delDeptByIds(@Param("ids") String[] ids);
 
     //根据id修改部门
-    Integer editDeptById(Department department);
+    Integer editDeptById(@Param("department") Department department);
 
     //查询所有的部门信息
     List<Department> selectAllDept();
