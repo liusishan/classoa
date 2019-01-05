@@ -11,7 +11,7 @@
  Target Server Version : 50639
  File Encoding         : 65001
 
- Date: 05/01/2019 21:06:59
+ Date: 05/01/2019 22:06:54
 */
 
 SET NAMES utf8mb4;
@@ -161,7 +161,7 @@ CREATE TABLE `t_permission`  (
   `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜单对应的图标',
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_permission
@@ -176,6 +176,8 @@ INSERT INTO `t_permission` VALUES (8, '管理员管理', 1, '#', '导航栏', 'l
 INSERT INTO `t_permission` VALUES (12, '部门列表', 3, '/dept', '导航栏', '', NULL);
 INSERT INTO `t_permission` VALUES (13, '部门数据分页', -1, '/deptPaging', '按钮', NULL, NULL);
 INSERT INTO `t_permission` VALUES (14, '专业列表', 4, '/major', '导航栏', NULL, NULL);
+INSERT INTO `t_permission` VALUES (15, '任务管理', 1, '#', NULL, 'layui-icon-read', '即作业管理');
+INSERT INTO `t_permission` VALUES (16, '作业列表', 15, '/task', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for t_role
@@ -204,33 +206,24 @@ CREATE TABLE `t_role_permission`  (
   `role_id` int(11) NULL DEFAULT NULL,
   `permission_id` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_role_permission
 -- ----------------------------
-INSERT INTO `t_role_permission` VALUES (1, 2, 1);
-INSERT INTO `t_role_permission` VALUES (3, 2, 3);
-INSERT INTO `t_role_permission` VALUES (4, 2, 4);
-INSERT INTO `t_role_permission` VALUES (5, 2, 5);
-INSERT INTO `t_role_permission` VALUES (6, 2, 6);
-INSERT INTO `t_role_permission` VALUES (7, 2, 7);
-INSERT INTO `t_role_permission` VALUES (8, 2, 8);
-INSERT INTO `t_role_permission` VALUES (9, 2, 9);
-INSERT INTO `t_role_permission` VALUES (10, 2, 10);
-INSERT INTO `t_role_permission` VALUES (11, 2, 11);
-INSERT INTO `t_role_permission` VALUES (22, 2, 12);
-INSERT INTO `t_role_permission` VALUES (23, 4, 1);
-INSERT INTO `t_role_permission` VALUES (24, 4, 3);
-INSERT INTO `t_role_permission` VALUES (25, 4, 4);
-INSERT INTO `t_role_permission` VALUES (26, 4, 9);
-INSERT INTO `t_role_permission` VALUES (27, 4, 10);
-INSERT INTO `t_role_permission` VALUES (28, 4, 11);
-INSERT INTO `t_role_permission` VALUES (29, 4, 12);
-INSERT INTO `t_role_permission` VALUES (30, 4, 13);
-INSERT INTO `t_role_permission` VALUES (31, 2, 13);
-INSERT INTO `t_role_permission` VALUES (32, 2, 14);
-INSERT INTO `t_role_permission` VALUES (33, 4, 14);
+INSERT INTO `t_role_permission` VALUES (34, 2, 1);
+INSERT INTO `t_role_permission` VALUES (35, 2, 15);
+INSERT INTO `t_role_permission` VALUES (36, 2, 16);
+INSERT INTO `t_role_permission` VALUES (37, 1, 1);
+INSERT INTO `t_role_permission` VALUES (38, 1, 3);
+INSERT INTO `t_role_permission` VALUES (39, 1, 4);
+INSERT INTO `t_role_permission` VALUES (40, 1, 5);
+INSERT INTO `t_role_permission` VALUES (41, 1, 6);
+INSERT INTO `t_role_permission` VALUES (42, 1, 7);
+INSERT INTO `t_role_permission` VALUES (43, 1, 8);
+INSERT INTO `t_role_permission` VALUES (44, 1, 12);
+INSERT INTO `t_role_permission` VALUES (45, 1, 13);
+INSERT INTO `t_role_permission` VALUES (46, 1, 14);
 
 -- ----------------------------
 -- Table structure for t_student_course
@@ -335,9 +328,9 @@ CREATE TABLE `t_user`  (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES (1, '201725231111', '123', 'abc', '张三', '男', '10086', '888@qq.com', '12300', '2018-12-28', '2018-12-19', '111111111111111111', '这是学生', NULL);
-INSERT INTO `t_user` VALUES (2, 'king', '110', 'def', '李四', '女', '10010', '666@qq.com', '29281', '2018-12-14', '2018-12-03', '222222222222222222', '这是老师', NULL);
-INSERT INTO `t_user` VALUES (3, 'root', 'root', 'qwer', '', '男', NULL, NULL, NULL, NULL, NULL, NULL, '这是管理员', NULL);
+INSERT INTO `t_user` VALUES (1, 'admin', '123', 'abc', '张三', '男', '10086', '888@qq.com', '12306', '2018-12-28', '2018-12-19', '111111111111111111', '这是管理员', NULL);
+INSERT INTO `t_user` VALUES (2, 'teacher', '123', 'def', '李四', '女', '10010', '666@qq.com', '12121', '2018-12-14', '2018-12-03', '222222222222222222', '这是教师', NULL);
+INSERT INTO `t_user` VALUES (3, 'student', '123', 'qwer', '王五', '男', '10000', '999@qq.com', '88888', '2019-01-05', '2019-01-02', '33333333', '这是普通学生', NULL);
 
 -- ----------------------------
 -- Table structure for t_user_role
@@ -353,9 +346,9 @@ CREATE TABLE `t_user_role`  (
 -- ----------------------------
 -- Records of t_user_role
 -- ----------------------------
-INSERT INTO `t_user_role` VALUES (1, 1, 4);
+INSERT INTO `t_user_role` VALUES (1, 1, 1);
 INSERT INTO `t_user_role` VALUES (2, 2, 2);
-INSERT INTO `t_user_role` VALUES (3, 3, 1);
+INSERT INTO `t_user_role` VALUES (3, 3, 4);
 
 -- ----------------------------
 -- Table structure for t_users
@@ -376,7 +369,7 @@ CREATE TABLE `t_users`  (
 -- ----------------------------
 -- Records of t_users
 -- ----------------------------
-INSERT INTO `t_users` VALUES (1, 'Tom', 'Anne', '110', '城市', NULL, NULL, '1');
+INSERT INTO `t_users` VALUES (1, 'Tom', 'Anne', '110', '城市', NULL, NULL, '3');
 
 -- ----------------------------
 -- Table structure for t_usert
