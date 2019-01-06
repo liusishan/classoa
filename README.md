@@ -1,3 +1,8 @@
+2019年1月6日22点11分
+1. 向数据表插入了数据
+2. 将"头部区域,左侧导航栏,底部区域" 与 "中间主体内容区域" 变为两个html.  dept.jsp和major.jsp和menu.jsp做了相应地修改
+3. 一些小修改
+
 2019年1月5日22点10分
 1. 将ReturnUtil.java改名为ResultUtil.java
 2. 解决了添加一条user默认有管理员权限的bug
