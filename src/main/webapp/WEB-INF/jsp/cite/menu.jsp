@@ -51,3 +51,14 @@
         </ul>
     </div>
 </div>
+
+<script>
+    $(".layui-nav-item a").on('click',function (e) {
+        var href = $(this).attr('href');
+        console.log(href);
+        if(href != "javascript:void(0);" ) {
+            $("iframe").attr('src',href);
+            return false;
+        }
+    });
+</script>

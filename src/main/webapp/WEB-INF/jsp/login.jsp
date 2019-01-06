@@ -89,8 +89,14 @@
             //发送数据之前要执行的逻辑
             beforeSend: function () {
                 //显示正在处理中的动画
-                loadingIndex = layer.load(2, {
-                    shade: [0.1, '#fff']
+
+                // loadingIndex = layer.load(2, {
+                //     shade: [0.1, '#fff']
+                // });
+
+                loadingIndex = layer.msg('处理中',{
+                    icon: 16,
+                    shade: 0.1
                 });
             },
             //接收到服务器的响应之后要执行的逻辑, 参数就是接收到的服务器的Http响应

@@ -87,53 +87,25 @@
 
 <!--body区-->
 <div class="layui-layout layui-layout-admin">
-
-    <!-- 头部区域 -->
-    <div class="layui-header">
-        <%@ include file="../cite/head.jsp" %>
-    </div>
-    <!-- 头部区域结束 -->
-
-    <!-- 左侧导航区域 -->
-    <%@ include file="../cite/menu.jsp" %>
-    <!-- 左侧导航区域结束 -->
-
-    <!-- 内容主体区域 -->
-    <div class="layui-body">
-        <div style="padding: 15px;">
-            <!-- 内容主体区域 -->
-
-
-            <!--数据表格-->
-            <table id="table_dept" lay-filter='table01'></table>
-            <!--表格头部工具栏-->
-            <script type="text/html" id="toolbar_dept">
-                <div class="layui-btn-container">
-                    <button class="layui-btn layui-btn layui-btn-sm layui-btn-warm" lay-event="add">添加</button>
-                    <button class="layui-btn layui-btn layui-btn-sm layui-btn-danger" lay-event="del">删除选中</button>
-                    <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal" lay-event="search">条件查询</button>
-                </div>
-            </script>
-            <!--表格行内操作按钮-->
-            <script type="text/html" id="bar01">
-                <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-blue" lay-event="detail">查看</a>
-                <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-green" lay-event="edit">编辑</a>
-                <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-red" lay-event="del">删除</a>
-            </script>
-
-            <!--主体内容区域结束-->
+    <!--数据表格-->
+    <table id="table_dept" lay-filter='table01'></table>
+    <!--表格头部工具栏-->
+    <script type="text/html" id="toolbar_dept">
+        <div class="layui-btn-container">
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-warm" lay-event="add">添加</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-danger" lay-event="del">删除选中</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal" lay-event="search">条件查询</button>
         </div>
-    </div>
-    <!-- 内容主体区域结束 -->
-
-    <!-- 底部固定区域 -->
-    <div class="layui-footer">
-        <%@ include file="../cite/footer.jsp" %>
-    </div>
-    <!-- 底部固定区域结束 -->
-
+    </script>
+    <!--表格行内操作按钮-->
+    <script type="text/html" id="bar01">
+        <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-blue" lay-event="detail">查看</a>
+        <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-green" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-red" lay-event="del">删除</a>
+    </script>
 </div>
 <!--body区结束-->
+
 </body>
 
 <%--引入lay ui 模块--%>
@@ -578,9 +550,9 @@
                         url: '${pageContext.request.contextPath}/editDept',
                         data: {
                             "id": deptData.id,
-                            "departmentName":$("#departmentName").val(),
-                            "departmentAdmin":$("#departmentAdmin").val(),
-                            "telephone":$("#telephone").val(),
+                            "departmentName": $("#departmentName").val(),
+                            "departmentAdmin": $("#departmentAdmin").val(),
+                            "telephone": $("#telephone").val(),
                             "remark": $("#remark").val()
                         },
                         //发送数据之前要执行的逻辑
@@ -594,7 +566,7 @@
                         success: function (result) {
                             //关闭正在处理中的动画
                             layer.close(loadingIndex4);
-                            if(result.success) {
+                            if (result.success) {
                                 //数据表格重载
                                 table.reload('table_dept', {
                                     url: '${pageContext.request.contextPath}/deptPaging'
@@ -613,7 +585,7 @@
                                     , end: function () {
                                     }
                                 });
-                            }else{
+                            } else {
                                 layer.msg('修改失败', {
                                     //提示图标
                                     icon: 5

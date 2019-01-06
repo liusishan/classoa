@@ -77,52 +77,24 @@
 
 <!--body区-->
 <div class="layui-layout layui-layout-admin">
-
-    <!-- 头部区域 -->
-    <div class="layui-header">
-        <%@ include file="../cite/head.jsp" %>
-    </div>
-    <!-- 头部区域结束 -->
-
-    <!-- 左侧导航区域 -->
-    <%@ include file="../cite/menu.jsp" %>
-    <!-- 左侧导航区域结束 -->
-
-
-
     <!-- 内容主体区域 -->
-    <div class="layui-body">
-        <div style="padding: 15px;">
-            <!-- 内容主体区域 -->
-
-            <!--数据表格-->
-            <table id="table_major" lay-filter='table01'></table>
-            <!--表格头部工具栏-->
-            <script type="text/html" id="toolbar_major">
-                <div class="layui-btn-container">
-                    <button class="layui-btn layui-btn layui-btn-sm layui-btn-warm" lay-event="add">添加</button>
-                    <button class="layui-btn layui-btn layui-btn-sm layui-btn-danger" lay-event="del">删除选中</button>
-                    <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal" lay-event="search">条件查询</button>
-                </div>
-            </script>
-            <!--表格行内操作按钮-->
-            <script type="text/html" id="bar01">
-                <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-blue" lay-event="detail">查看</a>
-                <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-green" lay-event="edit">编辑</a>
-                <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-red" lay-event="del">删除</a>
-            </script>
-
-            <!--主体内容区域结束-->
+    <!--数据表格-->
+    <table id="table_major" lay-filter='table01'></table>
+    <!--表格头部工具栏-->
+    <script type="text/html" id="toolbar_major">
+        <div class="layui-btn-container">
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-warm" lay-event="add">添加</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-danger" lay-event="del">删除选中</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal" lay-event="search">条件查询</button>
         </div>
-    </div>
+    </script>
+    <!--表格行内操作按钮-->
+    <script type="text/html" id="bar01">
+        <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-blue" lay-event="detail">查看</a>
+        <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-green" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-xs layui-btn-radius layui-bg-red" lay-event="del">删除</a>
+    </script>
     <!-- 内容主体区域结束 -->
-
-    <!-- 底部固定区域 -->
-    <div class="layui-footer">
-        <%@ include file="../cite/footer.jsp" %>
-    </div>
-    <!-- 底部固定区域结束 -->
-
 </div>
 <!--body区结束-->
 </body>
@@ -204,7 +176,6 @@
         });
 
 
-
         //添加专业
         function addMajor() {
             //取消只读
@@ -218,8 +189,7 @@
                 success: function (result) {
                     var d = result.data;
                     for (var i = 0; i < d.length; i++) {
-                        $("#dept").
-                        append("<option value=\""+ d[i].id +"\">"+ d[i].departmentName +"</option>");
+                        $("#dept").append("<option value=\"" + d[i].id + "\">" + d[i].departmentName + "</option>");
                     }
                     //更新渲染
                     form.render();

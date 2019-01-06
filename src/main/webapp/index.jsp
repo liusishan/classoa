@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2018/12/26
-  Time: 22:00
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Title</title>
@@ -16,7 +9,20 @@
 <br>
 <br>
 <br>
-<a href="${pageContext.request.contextPath}/login">进入登录页面</a>
+<div style="text-align: center; padding: 20%;">
+    <h2>观音心经</h2>
+    <p>
+        观自在菩萨，行深般（bō ）若（rě）波罗蜜多时，
+        照见五蕴皆空，度一切苦厄。舍利子！色不异空、空不异色、色即是空、空即是色。
+        受想行识、亦复如是。舍利子！是诸法空相。不生不灭、不垢不净、不增不减。是故空中无色、无受想行识。
+        无眼耳鼻舌身意。无色声香味触法。无眼界、乃至无意识界。
+        无无明、亦无无明尽。乃至无老死、亦无老死尽。无苦集灭道。
+        无智亦无得。以无所得故。菩提萨埵（duǒ）、依般若波罗蜜多故、心无罣（guà同挂）碍。
+        无罣碍故、无有恐怖、远离颠倒梦想、究竟涅槃。三世诸佛、依般若波罗蜜多故、得阿耨（nòu ）多罗三藐三菩提。
+        故知般若波罗蜜多、是大神咒、是大明咒、是无上咒、是无等等咒。能除一切苦、真实不虚。
+        故说般若波罗蜜多咒。即说咒曰：揭谛揭谛 波罗揭谛 波罗僧揭谛 菩提萨婆诃。
+    </p>
+</div>
 <br>
 <br>
 <br>
