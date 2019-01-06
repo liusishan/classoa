@@ -36,8 +36,19 @@
         </dl>
     </li>
     <li class="layui-nav-item">
-        <a href="${pageContext.request.contextPath}/logout">
-            退出
-        </a>
+        <a href="javascript:void(0);" onclick="logout()">退出</a>
     </li>
 </ul>
+
+<%--由于在main.jsp中用了iframe标签,因此将退出改为异步--%>
+<script>
+    function logout() {
+        // ajax清空session
+        $.ajax({
+            type: "POST",
+            url: "${pageContext.request.contextPath}/logout"
+        });
+        //浏览器跳转到登录页面
+        window.location.href = "${pageContext.request.contextPath}/login";
+    }
+</script>

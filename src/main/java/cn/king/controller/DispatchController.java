@@ -31,13 +31,13 @@ public class DispatchController {
      * @date: 2018/12/31 14:29
      * @description: 退出功能
      */
+    @ResponseBody
     @RequestMapping("/logout")
-    public String logout(HttpSession session) {
+    public void logout(HttpSession session) {
         //按照session名清空指定session        
         //session.removeAttribute("loginUser");        
         //让所有session失效‐‐ 清空所有session数据        
         session.invalidate();
-        return "redirect:/login";
     }
 
 

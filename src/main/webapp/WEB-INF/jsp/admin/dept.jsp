@@ -125,7 +125,7 @@
         //一个数据表格的实例
         table.render({
             elem: '#table_dept'//指定原始表格元素选择器
-            , height: 600//容器高度
+            , height: 650//容器高度
             , title: '部门数据表'
             , url: '${pageContext.request.contextPath}/deptPaging' //数据接口
             , page: true //开启分页
@@ -142,7 +142,7 @@
                 , {field: 'departmentName', title: '部门名称'}
                 , {field: 'departmentAdmin', title: '部门负责人'}
                 , {field: 'telephone', title: '部门负责人电话'}
-                , {fixed: '', title: '操作', toolbar: '#bar01', width: 200}
+                , {fixed: '', title: '操作', toolbar: '#bar01', width: 180}
             ]]
         });
 

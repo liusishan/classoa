@@ -26,7 +26,9 @@ public class LoginInterceptor implements HandlerInterceptor {
         if (loginUser == null) {
             //跳转到登录页面
             String path = session.getServletContext().getContextPath();
-            response.sendRedirect(path+"/login");
+//            response.sendRedirect(path+"/login");
+            session.setAttribute("doLogin","doLogin");
+            response.sendRedirect(path+"/error");
             return false;
         }
         //如果登录

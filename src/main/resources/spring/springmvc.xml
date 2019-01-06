@@ -50,6 +50,7 @@
             <!--某些请求不会被拦截-->
             <mvc:exclude-mapping path="/login"/>
             <mvc:exclude-mapping path="/doAJAXLogin"/>
+            <mvc:exclude-mapping path="/error"/>
             <!--静态资源不会被拦截-->
             <mvc:exclude-mapping path="/layui/**"/>
             <mvc:exclude-mapping path="/style/**"/>
@@ -62,6 +63,7 @@
             <!--某些请求不会被拦截-->
             <mvc:exclude-mapping path="/login"/>
             <mvc:exclude-mapping path="/doAJAXLogin"/>
+            <mvc:exclude-mapping path="/error"/>
             <!--静态资源不会被拦截-->
             <mvc:exclude-mapping path="/layui/**"/>
             <mvc:exclude-mapping path="/style/**"/>

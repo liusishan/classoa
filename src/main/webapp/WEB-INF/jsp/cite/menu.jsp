@@ -10,7 +10,7 @@
 
             <%--主页--%>
             <li class="layui-nav-item">
-                <a href="${pageContext.request.contextPath}/main">
+                <a href="${pageContext.request.contextPath}/home">
                     <!--图标-->
                     <i class="layui-icon layui-icon-home"></i>
                     <cite>&nbsp;&nbsp;主页</cite>
@@ -53,12 +53,15 @@
 </div>
 
 <script>
-    $(".layui-nav-item a").on('click',function (e) {
-        var href = $(this).attr('href');
-        console.log(href);
-        if(href != "javascript:void(0);" ) {
-            $("iframe").attr('src',href);
-            return false;
-        }
-    });
+    var token = '${sessionScope.loginUser.id}';
+    console.log(token);
+    if (token != null) {
+        $(".layui-nav-item a").on('click', function (e) {
+            var href = $(this).attr('href');
+            if (href != "javascript:void(0);") {
+                $("iframe").attr('src', href);
+                return false;
+            }
+        });
+    }
 </script>

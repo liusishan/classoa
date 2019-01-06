@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
 <head>
@@ -22,8 +23,7 @@
 
     <!-- 内容主体区域 -->
     <div class="layui-body">
-        <iframe src="${pageContext.request.contextPath}/#" width="100%" height="100%"
-                style="border: 1px solid black"></iframe>
+        <iframe width="100%" height="100%" style="border: 1px solid black"></iframe>
     </div>
     <!-- 内容主体区域结束 -->
 
