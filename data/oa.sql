@@ -11,7 +11,7 @@
  Target Server Version : 50639
  File Encoding         : 65001
 
- Date: 05/01/2019 22:06:54
+ Date: 06/01/2019 22:09:59
 */
 
 SET NAMES utf8mb4;
@@ -161,7 +161,7 @@ CREATE TABLE `t_permission`  (
   `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜单对应的图标',
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of t_permission
@@ -176,8 +176,9 @@ INSERT INTO `t_permission` VALUES (8, '管理员管理', 1, '#', '导航栏', 'l
 INSERT INTO `t_permission` VALUES (12, '部门列表', 3, '/dept', '导航栏', '', NULL);
 INSERT INTO `t_permission` VALUES (13, '部门数据分页', -1, '/deptPaging', '按钮', NULL, NULL);
 INSERT INTO `t_permission` VALUES (14, '专业列表', 4, '/major', '导航栏', NULL, NULL);
-INSERT INTO `t_permission` VALUES (15, '任务管理', 1, '#', NULL, 'layui-icon-read', '即作业管理');
-INSERT INTO `t_permission` VALUES (16, '作业列表', 15, '/task', NULL, NULL, NULL);
+INSERT INTO `t_permission` VALUES (15, '任务管理', 1, '#', '导航栏', 'layui-icon-read', '即作业管理');
+INSERT INTO `t_permission` VALUES (16, '作业列表', 15, '/teacher/task', '导航栏', NULL, NULL);
+INSERT INTO `t_permission` VALUES (17, '发布作业', 16, '/teacher/addTask', '菜单', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for t_role
