@@ -83,279 +83,256 @@
 <!--body区-->
 <div class="layui-layout layui-layout-admin">
 
-    <!-- 头部区域 -->
-    <div class="layui-header">
-        <%@ include file="../cite/head.jsp" %>
-    </div>
-    <!-- 头部区域结束 -->
 
-    <!-- 左侧导航区域 -->
-    <%@ include file="../cite/menu.jsp" %>
-    <!-- 左侧导航区域结束 -->
+    <button id="btn1">测试表单</button>
 
-    <!-- 内容主体区域 -->
-    <div class="layui-body">
-        <!-- 内容主体区域 -->
-        <div style="padding: 15px;">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+        <legend>作业历史记录</legend>
+    </fieldset>
+    <ul class="layui-timeline">
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-01-12</h3>
+                <div>
+                    <span>最晚提交时间:</span>
+                    <span class="layui-badge layui-bg-orange">2019-01-20</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>提交通过人数:</span>
+                    <span class="layui-badge layui-bg-black">49/50</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <!--个人作业-->
+                <div>
+                    <table class="layui-table" lay-size="sm" style="width: 70%">
+                        <colgroup>
+                            <col width="150">
+                            <col width="200">
+                            <col>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th style="width: 50%">个人作业</th>
+                            <th style="width: 27%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                汉语拼音抄100遍
+                            </td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">
+                                    审批作业
+                                </button>
+                                <span class="layui-badge-dot layui-bg-orange"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>汉语拼音抄100遍</td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>汉语拼音抄100遍</td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--小组作业-->
+                <div>
+                    <table class="layui-table" lay-size="sm" style="width: 70%">
+                        <colgroup>
+                            <col width="150">
+                            <col width="200">
+                            <col>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th style="width: 50%">小组作业</th>
+                            <th style="width: 27%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                汉语拼音抄100遍
+                            </td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>汉语拼音抄100遍</td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>汉语拼音抄100遍</td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2019-01-01</h3>
+                <div>
+                    <span>最晚提交时间:</span>
+                    <span class="layui-badge layui-bg-orange">2019-01-10</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>提交通过人数:</span>
+                    <span class="layui-badge layui-bg-black">49/50</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <!--个人作业-->
+                <div>
+                    <table class="layui-table" lay-size="sm" style="width: 70%">
+                        <colgroup>
+                            <col width="150">
+                            <col width="200">
+                            <col>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th style="width: 50%">个人作业</th>
+                            <th style="width: 27%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                汉语拼音抄100遍
+                            </td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>汉语拼音抄100遍</td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>汉语拼音抄100遍</td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--小组作业-->
+                <div>
+                    <table class="layui-table" lay-size="sm" style="width: 70%">
+                        <colgroup>
+                            <col width="150">
+                            <col width="200">
+                            <col>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th style="width: 50%">小组作业</th>
+                            <th style="width: 27%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                汉语拼音抄100遍
+                            </td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>汉语拼音抄100遍</td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>汉语拼音抄100遍</td>
+                            <td>
+                                <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
+                                <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
+                                <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
+                                <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
 
-            <button id="btn1" >测试表单</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </li>
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <span class="layui-badge-dot"></span>
+                <span class="layui-badge-dot layui-bg-orange"></span>
+                <span class="layui-badge-dot layui-bg-green"></span>
+                <span class="layui-badge layui-bg-cyan">点击查看更多作业历史</span>
+                <span class="layui-badge-dot layui-bg-cyan"></span>
+                <span class="layui-badge-dot layui-bg-blue"></span>
+                <span class="layui-badge-dot layui-bg-black"></span>
+            </div>
+        </li>
+    </ul>
 
-            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
-                <legend>作业历史记录</legend>
-            </fieldset>
-            <ul class="layui-timeline">
-                <li class="layui-timeline-item">
-                    <i class="layui-icon layui-timeline-axis"></i>
-                    <div class="layui-timeline-content layui-text">
-                        <h3 class="layui-timeline-title">2019-01-12</h3>
-                        <div>
-                            <span>最晚提交时间:</span>
-                            <span class="layui-badge layui-bg-orange">2019-01-20</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span>提交通过人数:</span>
-                            <span class="layui-badge layui-bg-black">49/50</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <!--个人作业-->
-                        <div>
-                            <table class="layui-table" lay-size="sm" style="width: 70%">
-                                <colgroup>
-                                    <col width="150">
-                                    <col width="200">
-                                    <col>
-                                </colgroup>
-                                <thead>
-                                <tr>
-                                    <th style="width: 50%">个人作业</th>
-                                    <th style="width: 27%">操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        汉语拼音抄100遍
-                                    </td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">
-                                            审批作业</button>
-                                        <span class="layui-badge-dot layui-bg-orange"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>汉语拼音抄100遍</td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>汉语拼音抄100遍</td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--小组作业-->
-                        <div>
-                            <table class="layui-table" lay-size="sm" style="width: 70%">
-                                <colgroup>
-                                    <col width="150">
-                                    <col width="200">
-                                    <col>
-                                </colgroup>
-                                <thead>
-                                <tr>
-                                    <th style="width: 50%">小组作业</th>
-                                    <th style="width: 27%">操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        汉语拼音抄100遍
-                                    </td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>汉语拼音抄100遍</td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>汉语拼音抄100遍</td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </li>
-                <li class="layui-timeline-item">
-                    <i class="layui-icon layui-timeline-axis"></i>
-                    <div class="layui-timeline-content layui-text">
-                        <h3 class="layui-timeline-title">2019-01-01</h3>
-                        <div>
-                            <span>最晚提交时间:</span>
-                            <span class="layui-badge layui-bg-orange">2019-01-10</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span>提交通过人数:</span>
-                            <span class="layui-badge layui-bg-black">49/50</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <!--个人作业-->
-                        <div>
-                            <table class="layui-table" lay-size="sm" style="width: 70%">
-                                <colgroup>
-                                    <col width="150">
-                                    <col width="200">
-                                    <col>
-                                </colgroup>
-                                <thead>
-                                <tr>
-                                    <th style="width: 50%">个人作业</th>
-                                    <th style="width: 27%">操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        汉语拼音抄100遍
-                                    </td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>汉语拼音抄100遍</td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>汉语拼音抄100遍</td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--小组作业-->
-                        <div>
-                            <table class="layui-table" lay-size="sm" style="width: 70%">
-                                <colgroup>
-                                    <col width="150">
-                                    <col width="200">
-                                    <col>
-                                </colgroup>
-                                <thead>
-                                <tr>
-                                    <th style="width: 50%">小组作业</th>
-                                    <th style="width: 27%">操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        汉语拼音抄100遍
-                                    </td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>汉语拼音抄100遍</td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>汉语拼音抄100遍</td>
-                                    <td>
-                                        <button class="layui-btn layui-bg-blue  layui-btn-xs layui-btn-radius">下载附件</button>
-                                        <button class="layui-btn layui-bg-cyan  layui-btn-xs layui-btn-radius">查看详情</button>
-                                        <button class="layui-btn layui-bg-red  layui-btn-xs layui-btn-radius">修改作业</button>
-                                        <button class="layui-btn layui-bg-green  layui-btn-xs layui-btn-radius ">审批作业</button>
-
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </li>
-                <li class="layui-timeline-item">
-                    <i class="layui-icon layui-timeline-axis"></i>
-                    <div class="layui-timeline-content layui-text">
-                        <span class="layui-badge-dot"></span>
-                        <span class="layui-badge-dot layui-bg-orange"></span>
-                        <span class="layui-badge-dot layui-bg-green"></span>
-                        <span class="layui-badge layui-bg-cyan">点击查看更多作业历史</span>
-                        <span class="layui-badge-dot layui-bg-cyan"></span>
-                        <span class="layui-badge-dot layui-bg-blue"></span>
-                        <span class="layui-badge-dot layui-bg-black"></span>
-                    </div>
-                </li>
-            </ul>
-
-        </div>
-        <!-- 内容主体区域结束 -->
-    </div>
-    <!-- 内容主体区域结束 -->
-
-    <!-- 底部固定区域 -->
-    <div class="layui-footer">
-        <%@ include file="../cite/footer.jsp" %>
-    </div>
-    <!-- 底部固定区域结束 -->
 
 </div>
 <!--body区结束-->
 </body>
 
 <script>
-    layui.use(['element', 'form','laydate'], function () {
+    layui.use(['element', 'form', 'laydate'], function () {
         var element = layui.element;
         //引入表单样式模块
         var form = layui.form;
@@ -375,7 +352,7 @@
             , calendar: true
         });
 
-        $("#btn1").on('click',function () {
+        $("#btn1").on('click', function () {
             layer.open({
                 type: 1,//弹出内容类型
                 title: "发布作业 软件技术五班 java高级应用",//标题

@@ -22,10 +22,8 @@
 
     <!-- 内容主体区域 -->
     <div class="layui-body">
-        <!-- 内容主体区域 -->
-            <iframe src="${pageContext.request.contextPath}/#" width="100%" height="100%"
-            style="border: 1px solid black"></iframe>
-        <%--<!--主体内容区域结束-->--%>
+        <iframe src="${pageContext.request.contextPath}/#" width="100%" height="100%"
+                style="border: 1px solid black"></iframe>
     </div>
     <!-- 内容主体区域结束 -->
 
@@ -45,6 +43,5 @@
         var element = layui.element;
     });
 </script>
-
 
 </html>
